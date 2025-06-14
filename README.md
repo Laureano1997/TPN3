@@ -104,62 +104,75 @@ Se presenta a continuación el diagrama en bloques del sistema:
 
 [RIEG20](https://www.mercadolibre.com.ar/regador-automatico-con-temporizador-gadnic-amplia-aplicacion-color-blanco/p/MLA35355975?highlight=true&searchVariation=MLA35355975&headerTopBrand=true#polycard_client=search-nordic&searchVariation=MLA35355975&wid=MLA2081759612&position=14&search_layout=grid&type=product&tracking_id=ebd19cd4-d13a-406d-aa17-b2a83fbba3ac&sid=search)
 
-[Kit Programador PSU 17A](https://www.mercadolibre.com.ar/kit-de-riego-automatico-hunter-xcore4-con-electrovalvula-pgv100-y-boquilla-psu-04-17a-hunt-kit-programador-psu-17a-25/p/MLA41746686?highlight=false&headerTopBrand=false#polycard_client=search-nordic&searchVariation=MLA41746686&wid=MLA1496301901&position=5&search_layout=grid&type=product&tracking_id=ebd19cd4-d13a-406d-aa17-b2a83fbba3ac&sid=search)
+[Hunter Xcore4](https://www.mercadolibre.com.ar/kit-de-riego-automatico-hunter-xcore4-con-electrovalvula-pgv100-y-boquilla-psu-04-17a-hunt-kit-programador-psu-17a-25/p/MLA41746686?highlight=false&headerTopBrand=false#polycard_client=search-nordic&searchVariation=MLA41746686&wid=MLA1496301901&position=5&search_layout=grid&type=product&tracking_id=ebd19cd4-d13a-406d-aa17-b2a83fbba3ac&sid=search)
 
 [HTV13FRF](https://articulo.mercadolibre.com.ar/MLA-2018382592-programador-1-zona-hub-wifi-alexa-google-home-rain-point-_JM?variation=182950089014#reco_item_pos=3&reco_backend=pdp_pads_right_rars_v2_with_default&reco_backend_type=low_level&reco_client=pdp-pads-right&reco_id=8a0557be-7f26-4d3f-ac53-82f6e7b6e29c&reco_model=rk_ent_v2_retsys_ads&is_advertising=true&ad_domain=PDPDESKTOP_RIGHT&ad_position=4&ad_click_id=NjcyNGNhOGYtMmQ3Zi00YjA1LTk2YTEtYTk3NzMyYjExMjI3)
 
 Se analizan tres opciones de controladores para sistemas de tratamiento.
 
-| Característica |  RIEG20 | PSU 17A| HTV13FRF|
+| Característica |  RIEG20 | Hunter Xcore4| HTV13FRF|
 |----------------|-----------------|---------|----------------------|
 |Pantalla LCD|No|Sí|No|
 |Conexión Wireless|No|No|Sí|
 |Tanque de agua|No|No|No|
-|Bomba de alta presión|No|Sí|Sí|
-|Nivel alto de tanque|Sí|Sí|Sí|
-|Nivel medio de tanque|No|No|Sí|
-|Nivel bajo de tanque|No|No|Sí|
+|RTC|No|Sí|No|
+|Batería|Sí|No|Sí|
+|Control de luz|No|No|No|
 |precio|US$18|US$435|110$|
 
-Nota: Los precios se muestran en dolares y todos deben ser importados.
+Nota: Los precios se muestran en dolares.
 
 ### 3.2 Requerimientos  
 
 A continuación, se enumeran los requerimientos del sistema:  
 
-#### **Firmware**  
+#### **Luz**  
 
 | Req ID | Descripción |  
 |--------|-------------|  
-| 1.1    | Implementación de máquinas de estado para gestionar el sistema. |  
-| 1.2    | Control de interrupciones para control de nivel. |  
-| 1.3    | Comunicación UART para interacción con el menú del sistema. |  
-| 1.4    | Procesamiento de datos de sensores de presión y nivel. |  
-| 1.5    | Actualización periódica del LCD con el estado del sistema. |  
+| 1.1    | El sistema deberá poseer un control de iluminación preseteable para mantener un flujo lumínico constante sobre la planta. |  
+| 1.2    | El control de la intensidad lumínica debe ajustarse empleando un potenciómetro. |  
 
-#### **Hardware**  
+#### **Agua**  
 
 | Req ID | Descripción |  
 |--------|-------------|  
-| 2.1    | Integración de dos bombas y cuatro sensores de nivel. |  
-| 2.2    | Alimentación adecuada para todos los módulos. |  
-| 2.3    | Botón de emergencia conectado al sistema de control. |  
+| 2.1    | El sistema tendrá integrado un tanque de agua para el riego. |  
+| 2.2    | El tanque dispondrá de un sensor de agua para avisar al usuario que el sistema se quedó sin agua, emitiendo alerta sonora y lumínica|  
+| 2.3    | El sistema empleará una electroválvula para el control del riego. |  
 
-#### **Interfaz**  
-
-| Req ID | Descripción |  
-|--------|-------------|  
-| 3.1    | Menú UART para: |
-|        | - Cambiar la frecuencia de la bomba de ósmosis.|
-|        | - Verificar el estado del sistema.|
-|        | - Detener el sistema completo.|
-| 3.2    | LCD para mostrar las presiones, nivel del tanque el estado de las bombas. |  
-
-#### **Seguridad**  
+#### **Modo de operación**  
 
 | Req ID | Descripción |  
 |--------|-------------|  
-| 4.1    | Implementación del botón de parada de emergencia para detener ambas bombas. |  
+| 3.1    | El sistema operará de forma automática midiendo parámetros del recinto y ajustando las condiciones acorde a la configuración |
+| 3.2    | En caso de ausencia de agua el sistema lo indicará al usuario y si ésta persiste bloqueará el sistema hasta que el agua se rellene y se presione el pulsador de reset |  
+
+#### **Display**  
+
+| Req ID | Descripción |  
+|--------|-------------|  
+| 4.1    | El Display mostrará en pantalla 4 menúes que indicarán el estado del sistema y podrá cambiarse entre ellos utilizando un pulsador de Menu |  
+| 4.1.1  | -  El primer menú indicará el nombre del sistema.|
+| 4.1.2  | -  El segundo mostrará los datos del suelo y del sistema de riego.|
+| 4.1.3  | -  El tercero mostrará los datos de temperatura y estado del tanque (lleno o vacío).|
+| 4.1.4  | -  El cuarto mostrará el día y la hora configuradas.|
+| 4.2    | Si el sistema se queda sin agua durante un tiempo prolongado el Display indicará que el sistema está bloqueado.|
+
+#### **Configuración**
+| Req ID | Descripción |  
+|--------|-------------|  
+| 5.1    | Empleando el módulo bluetooth podrán configurarse los parámetros del sistema. | 
+
+#### **Protocolo UART**
+| Req ID | Descripción |  
+|--------|-------------|  
+| 6.1    | El sistema empleará el protocolo UART para mostrar todos los parámetros del sistema. |
+  
+#### **Alimentación**
+| Req ID | Descripción |  
+|--------|-------------|  
+| 7.1    | El sistema debe operar con una fuente conmutada de 12V 1A. |
 
 ### 3.3 Casos de Uso  
 
@@ -167,26 +180,40 @@ A continuación, se detallan algunos casos de uso:
 
 | Elemento del caso de uso | Definición |  
 |---------------------------|------------|  
-| **Disparador**           | Presión por debajo del umbral mínimo. |  
-| **Precondición**          | La bomba está activa. |  
-| **Flujo básico**          | La bomba se detiene automáticamente para evitar daños. |  
+| **Disparador**           | El usuario desea cambiar de menú. |  
+| **Precondición**          | El sistema no está bloqueado. |  
+| **Flujo básico**          | La información del display cambia con el pulsador. |  
 
 | Elemento del caso de uso | Definición |  
 |---------------------------|------------|  
-| **Disparador**           | Se selecciona "Ver estado del sistema" en el menú UART. |  
-| **Precondición**          | La conexión UART está establecida. |  
-| **Flujo básico**          | Se muestra en el terminal el estado de las bombas y presiones. |  
+| **Disparador**           | El usuario quiere configurar los parámetros por Bluetooth. |  
+| **Precondición**          | El sistema no está bloqueado. |  
+| **Flujo básico**          | El sistema toma los datos enviados y los guarda. | 
 
 | Elemento del caso de uso | Definición |  
 |---------------------------|------------|  
-| **Disparador**           | Se presiona el botón de emergencia. |  
-| **Precondición**          | Una o ambas bombas están activas. |  
-| **Flujo básico**          | Ambas bombas se detienen inmediatamente. |  
+| **Disparador**           | El suelo se encuentra seco. |  
+| **Precondición**          | El tanque posee agua para regar. |  
+| **Flujo básico**          | Se abre la electroválvula hasta obtener el nivel de humedad configurado. |  
+
+| Elemento del caso de uso | Definición |  
+|---------------------------|------------|  
+| **Disparador**           | El sistema se quedó sin agua por una hora. |  
+| **Precondición**          | Tanque de agua vacío. |  
+| **Flujo básico**          | El sistema se bloquea. |  
+
+| Elemento del caso de uso | Definición |  
+|---------------------------|------------|  
+| **Disparador**           | El usuario quiere desbloquear el sistema presionando el pulsador de reset. |  
+| **Precondición**          | Sistema bloqueado. |  
+| **Flujo básico**          | El sistema se desbloquea manteniendo el led de falta de agua encendido. |  
 
 ### Plazos  
 
 | Fecha límite             | Entregable |  
 |---------------------------|------------|  
-| 30 de noviembre          | Informe de avance. |  
-| 7 de diciembre           | Video demostrativo del sistema funcionando. |  
-| 14 de diciembre          | Informe final del proyecto. |  
+| 7 de junio          | Definición de requisitos. |  
+| 21 de junio          | Informe de avance. |  
+| 28 de junio          | Video del sistema funcionando. |
+| 5 de julio          | Informe final del proyecto. |  
+
