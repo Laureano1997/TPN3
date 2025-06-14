@@ -11,79 +11,71 @@ Se desea implementar un sistema que interactúe con diferentes sensores y actuad
 
 ## 2 - Selección del proyecto a implementar  
 
-Al momento de la elección del sistema a implementar, se barajaron diferentes opciones acorde a distintos criterios:  
+Al momento de la elección del sistema a implementar, se barajaron diferentes opciones acorde a tres aspectos a considerar:  
 
-- **Complejidad técnica**: El proyecto debe contener sensores, actuadores y elementos de interacción con los usuarios, cuidando el nivel de complejidad para implementarlo en el tiempo correspondiente.  
 - **Disponibilidad del hardware**: Los elementos electrónicos utilizados deben estar disponibles en el mercado. 
-- **Impacto educativo**: El proyecto proporciona experiencia práctica en sistemas embebidos, para aplicar la mayoría de los conceptos estudiados a lo largo del libro
-- **Utilidad personal**: Se desea que el sistema a implementar tenga utilidad para proyectos personales  
+- **Utilidad del proyecto**: Se desea que el sistema a implementar tenga utilidad directa.
+- **Tiempo de implementación**: El proyecto debe ser implementado en los tiempos explicitados a lo largo del cuatrimestre.
 
 <table>
   <tr>
     <th>Proyecto</th>
     <th>Peso </th>
-    <th>Complejidad técnica (Peso: 8)</th>
-    <th>Disponibilidad del Hardware (Peso: 7)</th>
-    <th>Impacto Educativo (Peso: 7)</th>
-    <th>Utilidad Personal (Peso: 8)</th>
+    <th>Disponibilidad del hardware (Peso: 8)</th>
+    <th>Utilidad del proyecto (Peso: 7)</th>
+    <th>Tiempo de implementación (Peso: 9)</th>
     <th> Suma de puntajes pesados </th>
   </tr>
   <tr>
     <td rowspan="2">Timbre escolar</td>
     <td>Puntaje</td> 
-    <td style="text-align: center;">9</td>
-    <td style="text-align: center;">10</td>
-    <td style="text-align: center;">6</td>
+    <td style="text-align: center;">8</td>
     <td style="text-align: center;">7</td>
-    <td style="text-align: center;" rowspan="2">240</td>
+    <td style="text-align: center;">9</td>
+    <td style="text-align: center;" rowspan="2">194</td>
   </tr>
   <tr>
     <td> Puntaje pesado</td>
-    <td style="text-align: center;">72</td>
-    <td style="text-align: center;">70</td>
-    <td style="text-align: center;">42</td>
-    <td style="text-align: center;">56</td>
+    <td style="text-align: center;">64</td>
+    <td style="text-align: center;">49</td>
+    <td style="text-align: center;">81</td>
 </tr>
 <tr>
     <td rowspan="2">Invernadero automático</td>
     <td>Puntaje</td> 
+    <td style="text-align: center;">8</td>
+    <td style="text-align: center;">8</td>
     <td style="text-align: center;">9</td>
-    <td style="text-align: center;">8</td>
-    <td style="text-align: center;">8</td>
-    <td style="text-align: center;">8</td>
-    <td style="text-align: center;" rowspan="2"> 248 </td>
+    <td style="text-align: center;" rowspan="2"> 201 </td>
   </tr>
   <tr>
     <td> Puntaje pesado</td>
-    <td style="text-align: center;">72</td>
-    <td style="text-align: center;">56</td>
-    <td style="text-align: center;">56</td>
     <td style="text-align: center;">64</td>
+    <td style="text-align: center;">56</td>
+    <td style="text-align: center;">56</td>
 </tr>
 <tr>
     <td rowspan="2">Monitoreo de alimentación de tableros industriales</td>
     <td>Puntaje</td> 
     <td style="text-align: center;">4</td>
-    <td style="text-align: center;">6</td>
     <td style="text-align: center;">9</td>
-    <td style="text-align: center;">5</td>
-    <td style="text-align: center;" rowspan="2"> 177 </td>
+    <td style="text-align: center;">4</td>
+    <td style="text-align: center;" rowspan="2"> 131 </td>
   </tr>
   <tr>
     <td> Puntaje pesado</td>
     <td style="text-align: center;">32</td>
-    <td style="text-align: center;">42</td>
     <td style="text-align: center;">63</td>
-    <td style="text-align: center;">40</td>
+    <td style="text-align: center;">36</td>
     
 </tr>
 </table>
 
--Timbre escolar: El proyecto consiste en implementar un timbre automático para aplicación en colegios secundarios donde se tienen horarios de recreos establecidos, automatizando el proceso de tocar el timbre y evitando errores por parte del preceptor. Se le asignó un puntaje de 9 en complejidad dado que es muy viable para realizar en el tiempo explicitado; en disponibilidad de hardware se le asignó un peso de 10 dado que se tiene el hardware completamente disponible; a impacto educativo se le asignó un peso de 6 dado que no emplea tantos módulos y dispositivos; a utilidad personal se le asignó un peso de 7 dado que lo emplearía en la institución donde trabajo.
+-Timbre escolar: El proyecto consiste en implementar un timbre automático para aplicación en colegios secundarios donde se tienen horarios de recreos establecidos, automatizando el proceso de tocar el timbre y evitando errores por parte del preceptor. Se le asignó un puntaje de 8 en disponibilidad de hardware, porque los elementos se consiguen fácilmente en cualquier casa de electrónica; un puntaje de 7 en utilidad, dado que puede generar interés a los colegios pero solo a un costo bajo; se le asignó un puntaje de 9 a tiempo de implementación, porque es un proyecto acorde al tiempo estipulado
 
--Invernadero automático: El proyecto consiste en implementar un sistema que controle y regule los parámetros dentro de un invernadero para abastecer de agua y monitorear el estado de una planta específica, evitando la responsabilidad de una persona a prestar atención al estado de ésta. Se le asignó un puntaje de 9 en complejidad dado que al igual que el proyecto anterior es viable de realizar; en disponibilidad de hardware se le asignó un peso de 8 dado que algunos elementos electrónicos son dificiles de conseguir; a impacto educativo se le asignó un peso de 8 dado que puede escalarse y agregarse módulos para diferentes funcionalidades; a utilidad personal se le asignó un peso de 8 dado que cubriría la necesidad de un amigo personal.
+-Invernadero automático: El proyecto consiste en implementar un sistema que controle y regule los parámetros dentro de un invernadero para abastecer de agua y monitorear el estado de una planta específica, automatizando el proceso rutinario de una persona de regar el suelo. Se le asignó un puntaje de 8 en disponibilidad de hardware, porque los elementos se consiguen fácilmente en cualquier casa de electrónica; un puntaje de 8 en utilidad, dado que a un precio competitivo puede introducirse en el mercado; se le asignó un puntaje de 9 a tiempo de implementación, porque es un proyecto acorde al tiempo estipulado
 
--Monitoreo de alimentación de tableros industriales: El proyecto consiste en dearrollar un sistema que monitoree la tensión y corriente trifásica, detecte anomalías y envíe alertas a un sistema central para monitoreo y acción sobre un tablero aplicado a la industria. Se le asignó un puntaje de 4 en complejidad dado que es un proyecto ambicioso para el tiempo de desarrollo; en disponibilidad de hardware se le asignó un peso de 6 dado que no es fácil de conseguir elementos que transformen la corriente trifásica a valores que se manejen con la placa; a impacto educativo se le asignó un peso de 9 dado que puede emplear distintos módulos e interfaces aplicando a gran cantidad de elementos electrónicos; a utilidad personal se le asignó un peso de 5 dado que no tiene un impacto directo.
+-Monitoreo de alimentación de tableros industriales: El proyecto consiste en dearrollar un sistema que monitoree la tensión y corriente trifásica, detecte anomalías y envíe alertas a un sistema central para monitoreo y acción sobre un tablero aplicado a la industria. Se le asignó un puntaje de 4 en disponibilidad de hardware, porque los transductores para mediciones de corrientes trifásicas son dificiles de conseguir; un puntaje de 9 en utilidad, dado que puede ser un elemento de gran utilidad para control y análisis estadístico; se le asignó un puntaje de 4 a tiempo de implementación, pues es un proyecto extenso para desarrollar.
 
 ### 2.1 - Propósito del proyecto  
 
@@ -93,7 +85,7 @@ Diseñar un sistema que automatice el proceso de riego y control de un invernade
 
 El sistema será desarrollado utilizando la placa **NUCLEO-F429ZI**, incluyendo las siguientes funcionalidades:  
 
-1. Control de electroválvula de riego monitoreando la humedad de suelo y la disponibilidad de agua en el tanque
+1. Control de electroválvula de riego monitoreando la humedad de suelo y la disponibilidad de agua en el tanque empleando un sensor N.O. al fondo del tanque que se cerrará si detecta agua.
 2. Visualización del estado del sistema en un LCD.  
 3. Interacción mediante un menú UART y Bluetooth para ajustar parámetros y verificar el estado del sistema.  
 4. Pulsador para cambiar los datos mostrados en el Display.
@@ -105,8 +97,8 @@ El sistema será desarrollado utilizando la placa **NUCLEO-F429ZI**, incluyendo 
 
 ### 3.1 - Diagrama de bloques  
 
-Se presenta a continuación un esquema de interconexión entre los distintos elementos del sistema:  
-![Error de imagen](diagram.png)
+Se presenta a continuación el diagrama en bloques del sistema:  
+![Error de imagen](BLOQUES_TP4.png)
 
 ### 3.2 Análisis de mercado
 
